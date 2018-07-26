@@ -80,7 +80,9 @@ public class Results {
 		println "clusters $clusters"
 
 		def catTotals = [:]
-		def f1list = []
+		def f1List = []
+		def recallList = []
+		def precisionList = []
 
 		//get category totals
 		clusters.eachWithIndex{ cluster, ind ->
@@ -108,13 +110,22 @@ public class Results {
 			def precision = catMax.value /cluster.size()
 			def recall = catMax.value/ catTotals[catMax.key]
 			def f1 = (2 * precision * recall) / (precision + recall);
-			f1list << f1
+			f1List << f1
+			precisionList << precision
+			recallList << recall
 
 			println "recall $recall precision $precision f1 $f1"
 			println ""
 		}
-		def averagef1 = f1list.sum()/f1list.size()
-		println "f1list: $f1list averagef1: :$averagef1"
+		def averagef1 = f1List.sum()/f1List.size()
+		def averageRecall = recallList.sum()/recallList.size()
+		def averagePrecision = precisionList.sum()/precisionList.size()
+
+
+		println "f1list: $f1List averagef1: :${averagef1.round(2)}"
+		println "precisionList: $precisionList averagePrecision: ${averagePrecision.round(2)}"
+		println "recallList: $recallList aveargeRecall: ${averageRecall.round(2)}"
+
 		println "~~~~~~~~~~~~~~~~~"
 	}
 

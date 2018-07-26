@@ -77,14 +77,14 @@ public class ClusterCarrot2KM
 		final Map<String, Object> luceneGlobalAttributes = new HashMap<String, Object>();
 
 		String indexPath =
-				//'indexes/20NG5WindowsmiscForsaleHockeySpaceChristian'
-	//        	'indexes/20NG6GraphicsHockeyCryptSpaceChristianGuns'
-    //    'indexes/R5'
-        //'indexes/R4'
+                'indexes/20NG6GraphicsHockeyCryptSpaceChristianGuns'
+		//		'indexes/20NG5WindowsmiscForsaleHockeySpaceChristian'
+  //      'indexes/R5'
+    //   'indexes/R4'
 	//	'indexes/classic4_500L5'
-		'indexes/crisis3FireBombFloodL5'
+	//	'indexes/crisis3FireBombFloodL5'
 
-		final int numberOfCategories = 3
+		final int numberOfCategories = 6
 
 		// Sanity check.
 		if (!new File(indexPath).isDirectory()) {
