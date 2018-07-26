@@ -1,0 +1,23 @@
+
+apply plugin: 'groovy'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+	compile 'org.codehaus.groovy:groovy-all:2.5.1'
+    // The production code uses the SLF4J logging API at compile time
+    compile 'org.slf4j:slf4j-api:1.7.18'
+
+	// https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
+	// https://mvnrepository.com/artifact/commons-lang/commons-lang
+	compile group: 'commons-lang', name: 'commons-lang', version: '2.6'
+	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+	compile 'commons-logging:commons-logging:1.2'
+
+	compile group: 'org.carrot2', name: 'carrot2-core', version: '3.16.0'
+	compile group: 'org.carrot2', name: 'carrot2', version: '3.16.0', ext: 'pom'
+
+    testCompile 'junit:junit:4.12'
+}
